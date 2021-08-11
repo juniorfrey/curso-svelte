@@ -1,5 +1,5 @@
 <script>
-    export let index, poster, title, year;
+    export let  poster, title, year;
 </script>
 <style>
     img{
@@ -9,6 +9,6 @@
 
 
  <article>
-    #{index + 1} <img src={poster} alt={title} width="100px" height="100px">
+   <img src={poster} alt={title} width="100px" height="100px">
     <h3> {title} - {year}  </h3>
 </article>
