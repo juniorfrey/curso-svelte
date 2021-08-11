@@ -1,5 +1,5 @@
 <script>
-	export let name;
+	let name = 'desarrollo';
 	export let inicialConteo = 0;
     export let maxCounter = 9;
 	let contador = inicialConteo;
