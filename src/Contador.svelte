@@ -1,6 +1,7 @@
 <script>
 	export let name;
 	export let inicialConteo = 0;
+    export let maxCounter = 9;
 	let contador = inicialConteo;
 
 	/* Funcion para cambiar texto a la variable name*/
@@ -11,6 +12,13 @@
 	function IncrementarContador(){
 		contador++;
 	}
+
+    // Indicamos uan declaración reactiva -> "$:""
+    $: esPar_Impar = contador % 2 === 0 ? `Es par` : `Es Impar`;
+    $: {
+        if(contador > maxCounter)
+            contador = maxCounter;
+    }
 
 </script>
 
@@ -41,4 +49,5 @@
 	<button on:click={handleClick}>Cambiar nombre</button>
 	<button on:click={IncrementarContador}>Incrementar contador</button>
 	<span>{contador}</span>
+    <span> {esPar_Impar} </span>
 </main>
