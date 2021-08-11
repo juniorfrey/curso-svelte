@@ -1,11 +1,18 @@
 <script>
 	export let name;
-</script>
+	export let inicialConteo = 0;
+	let contador = inicialConteo;
 
-<main>
-	<h1>Ambiente de  {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+	/* Funcion para cambiar texto a la variable name*/
+	function handleClick(){
+		name = 'Development';
+	}
+
+	function IncrementarContador(){
+		contador++;
+	}
+
+</script>
 
 <style>
 	main {
@@ -28,3 +35,10 @@
 		}
 	}
 </style>
+
+<main>
+	<h1>Ambiente de  {name}!</h1>
+	<button on:click={handleClick}>Cambiar nombre</button>
+	<button on:click={IncrementarContador}>Incrementar contador</button>
+	<span>{contador}</span>
+</main>
